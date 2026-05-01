@@ -1,6 +1,6 @@
 # LAB 4 : Analyse statique d'un APK avec JADX GUI + dex2jar + JD-GUI
 
-Objectif
+# Objectif
 
 Ce lab a pour objectif d’analyser statiquement une application Android (APK) afin de comprendre sa structure interne, identifier d’éventuelles vulnérabilités et comparer différents outils d’analyse comme JADX GUI, dex2jar et JD-GUI.
 
