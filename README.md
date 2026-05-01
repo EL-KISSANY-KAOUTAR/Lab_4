@@ -5,8 +5,8 @@
 Ce lab a pour objectif d’analyser statiquement une application Android (APK) afin de comprendre sa structure interne, identifier d’éventuelles vulnérabilités et comparer différents outils d’analyse comme JADX GUI, dex2jar et JD-GUI.
 
 Task 1 — Préparer le workspace et vérifier l'APK
-1- Créez un dossier de travail pour ce lab :
 
+1- Créez un dossier de travail pour ce lab :
 <img width="767" height="210" alt="image" src="https://github.com/user-attachments/assets/2e9799e9-5ac5-4e17-b15c-e8634abb41e2" />
 
 2- Copiez l'APK à analyser dans ce dossier.
@@ -18,8 +18,10 @@ Task 1 — Préparer le workspace et vérifier l'APK
 4- Listez le contenu de l'APK :
 <img width="829" height="218" alt="image" src="https://github.com/user-attachments/assets/9e47a250-41ed-4fc4-9adf-4d402e8789ec" />
 
+5- Calculez le hash de l'APK pour traçabilité :
 <img width="843" height="82" alt="image" src="https://github.com/user-attachments/assets/35cde1ed-82f8-428b-8a92-bc513688ec5e" />
 
+6- (Optionnel) Vérifiez la signature de l'APK :
 <img width="947" height="181" alt="image" src="https://github.com/user-attachments/assets/fb92983b-1e51-46b3-9a59-08e48a6ce0ab" />
 
 <img width="959" height="470" alt="image" src="https://github.com/user-attachments/assets/d7dfcd4d-6e85-42fc-9fff-b5b8fefe0a11" />
