@@ -28,104 +28,86 @@ Task 3 — Analyse avec JADX GUI
 
 <img width="959" height="470" alt="image" src="https://github.com/user-attachments/assets/d7dfcd4d-6e85-42fc-9fff-b5b8fefe0a11" />
 
+Explorez la structure de l'APK dans le panneau de gauche :
+- resources/AndroidManifest.xml
 <img width="959" height="502" alt="image" src="https://github.com/user-attachments/assets/6bf9b844-28f5-4a53-8077-3c7fb96074a1" />
-1. Package principal, versionName, minSdk, targetSdk
 
+Analyse le manifeste :
+
+1. Package principal, versionName, minSdk, targetSdk
 
 Package principal : owasp.mstg.uncrackable1
 
-
 versionName : 1.0
-
 
 versionCode : 1
 
-
 minSdkVersion : 19
-
 
 targetSdkVersion : 28
 
-
-
 2. Permissions demandées
-
 
 Aucune permission n’est déclarée dans le manifeste.
 
-
 Il n’y a pas de balise <uses-permission>.
-
-
 
 3. Composants identifiés
 
-
 Activity : sg.vantagepoint.uncrackable1.MainActivity
-
 
 Services : aucun
 
-
 Receivers : aucun
-
 
 Providers : aucun
 
-
-
 4. Composants exportés ou avec intent-filter
-
 
 MainActivity possède un intent-filter avec :
 
-
 android.intent.action.MAIN
 
-
 android.intent.category.LAUNCHER
-
-
-
 
 Donc c’est l’activité principale lancée au démarrage de l’application.
 
 5. usesCleartextTraffic / debuggable
 
-
 android:usesCleartextTraffic="true" : absent
 
-
 android:debuggable="true" : absent
-
 
 Donc aucune configuration explicite dangereuse de ce type n’est visible dans le manifeste.
 
 Explorez les ressources importantes :
-strings.xml pour les chaînes de caractères
+
+- strings.xml pour les chaînes de caractères
 
 <img width="959" height="426" alt="image" src="https://github.com/user-attachments/assets/321754c4-0d69-41aa-90cf-99984e131493" />
 Le fichier strings.xml a été exploré afin d’identifier les chaînes de caractères utilisées par l’application. Cette analyse permet de repérer d’éventuels secrets en clair, messages sensibles, URLs ou clés API exposées.
 Le fichier strings.xml a été analysé afin d’identifier les chaînes de caractères utilisées par l’application. Aucune information sensible telle que des mots de passe, clés API ou tokens n’a été trouvée. Toutefois, la présence du message “Enter the Secret String” indique que l’application repose sur un mécanisme de vérification basé sur une valeur secrète, suggérant que cette logique est implémentée dans le code source.
 
-network_security_config.xml si présent
+- network_security_config.xml si présent
 Autres fichiers XML de configuration
 Aucun fichier network_security_config.xml n’a été trouvé dans les ressources de l’APK. Les autres fichiers XML identifiés concernent principalement l’interface graphique (activity_main.xml), le menu (menu_main.xml) et les ressources textuelles ou visuelles (strings.xml, styles.xml, dimens.xml). Aucun fichier de configuration réseau sensible n’a été observé.
 
+
 Task 4 — Recherche de chaînes sensible
+
+<img width="587" height="367" alt="image" src="https://github.com/user-attachments/assets/dfa40398-4946-4f84-a3f6-69f16e677067" />
 Observation 1
 Recherche : http://
 Résultat : Aucun résultat trouvé
 Emplacement : N/A
 Risque : Faible
 Description : Aucune URL non sécurisée n’a été détectée dans le code de l’application.
-<img width="587" height="367" alt="image" src="https://github.com/user-attachments/assets/dfa40398-4946-4f84-a3f6-69f16e677067" />
 
-.io
+- .io
 <img width="480" height="499" alt="image" src="https://github.com/user-attachments/assets/debaf635-45df-40c7-abf9-d736220553fa" />
 
 Recherchez des informations d'authentification :
-secret
+- secret
 <img width="477" height="498" alt="image" src="https://github.com/user-attachments/assets/3e48fcd0-aea8-49e6-acab-9c61dc6090b8" />
 
 Recherchez des indicateurs de mode de développement :
@@ -134,10 +116,21 @@ Recherchez des indicateurs de mode de développement :
 <img width="691" height="335" alt="image" src="https://github.com/user-attachments/assets/174f6c79-0946-4619-9d91-55a3793f463f" />
 <img width="951" height="337" alt="image" src="https://github.com/user-attachments/assets/1287d398-5189-42a5-b9a9-5af2208b8797" />
 
-Task 5 — Convertir DEX → JAR avec dex2jar (15-20 min)
+Task 5 — Convertir DEX → JAR avec dex2jar 
+
+1- Extrayez les fichiers DEX de l'APK :
+
 <img width="479" height="131" alt="image" src="https://github.com/user-attachments/assets/e7c638df-c1e0-485e-8c68-400a631721db" />
+
+2- Vérifiez les fichiers DEX extraits :
+
 <img width="812" height="14" alt="image" src="https://github.com/user-attachments/assets/ca31c4ac-da11-445b-9537-fba026a67ace" />
+
+Convertissez chaque fichier DEX en JAR :
+
 <img width="689" height="62" alt="image" src="https://github.com/user-attachments/assets/34c2b8be-fbf4-4412-869d-3623ba15ebc8" />
+
+
 <img width="608" height="122" alt="image" src="https://github.com/user-attachments/assets/54df719b-8e97-430d-82e3-6fb0ee9b67a2" />
 <img width="850" height="40" alt="image" src="https://github.com/user-attachments/assets/7609b253-822e-41c2-8b25-b90a7bba9ff7" />
 
