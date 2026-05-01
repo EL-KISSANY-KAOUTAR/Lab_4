@@ -4,6 +4,7 @@
 
 Ce lab a pour objectif d’analyser statiquement une application Android (APK) afin de comprendre sa structure interne, identifier d’éventuelles vulnérabilités et comparer différents outils d’analyse comme JADX GUI, dex2jar et JD-GUI.
 
+Analyse du AndroidManifest.xml
 <img width="767" height="210" alt="image" src="https://github.com/user-attachments/assets/2e9799e9-5ac5-4e17-b15c-e8634abb41e2" />
 
 
