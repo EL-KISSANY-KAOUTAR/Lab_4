@@ -122,16 +122,16 @@ Task 5 — Convertir DEX → JAR avec dex2jar
 
 <img width="479" height="131" alt="image" src="https://github.com/user-attachments/assets/e7c638df-c1e0-485e-8c68-400a631721db" />
 
-2- Vérifiez les fichiers DEX extraits :
-
 <img width="812" height="14" alt="image" src="https://github.com/user-attachments/assets/ca31c4ac-da11-445b-9537-fba026a67ace" />
-
-Convertissez chaque fichier DEX en JAR :
 
 <img width="689" height="62" alt="image" src="https://github.com/user-attachments/assets/34c2b8be-fbf4-4412-869d-3623ba15ebc8" />
 
+Vérifiez les fichiers DEX extraits :
 
 <img width="608" height="122" alt="image" src="https://github.com/user-attachments/assets/54df719b-8e97-430d-82e3-6fb0ee9b67a2" />
+
+Convertissez chaque fichier DEX en JAR :
+
 <img width="850" height="40" alt="image" src="https://github.com/user-attachments/assets/7609b253-822e-41c2-8b25-b90a7bba9ff7" />
 
 🎯 Task 6 — Comparaison JADX vs JD-GUI
