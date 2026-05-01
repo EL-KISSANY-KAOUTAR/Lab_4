@@ -1,6 +1,6 @@
 # LAB 4 : Analyse statique d'un APK avec JADX GUI + dex2jar + JD-GUI
 
-🎯 Objectif
+Objectif
 
 Ce lab a pour objectif d’analyser statiquement une application Android (APK) afin de comprendre sa structure interne, identifier d’éventuelles vulnérabilités et comparer différents outils d’analyse comme JADX GUI, dex2jar et JD-GUI.
 
@@ -36,15 +36,15 @@ Analyse le manifeste :
 
 1. Package principal, versionName, minSdk, targetSdk
 
-Package principal : owasp.mstg.uncrackable1
+- Package principal : owasp.mstg.uncrackable1
 
-versionName : 1.0
+- versionName : 1.0
 
-versionCode : 1
+- versionCode : 1
 
-minSdkVersion : 19
+- minSdkVersion : 19
 
-targetSdkVersion : 28
+- targetSdkVersion : 28
 
 2. Permissions demandées
 
@@ -54,29 +54,29 @@ Il n’y a pas de balise <uses-permission>.
 
 3. Composants identifiés
 
-Activity : sg.vantagepoint.uncrackable1.MainActivity
+- Activity : sg.vantagepoint.uncrackable1.MainActivity
 
-Services : aucun
+- Services : aucun
 
-Receivers : aucun
+- Receivers : aucun
 
-Providers : aucun
+- Providers : aucun
 
 4. Composants exportés ou avec intent-filter
 
 MainActivity possède un intent-filter avec :
 
-android.intent.action.MAIN
+- android.intent.action.MAIN
 
-android.intent.category.LAUNCHER
+- android.intent.category.LAUNCHER
 
 Donc c’est l’activité principale lancée au démarrage de l’application.
 
 5. usesCleartextTraffic / debuggable
 
-android:usesCleartextTraffic="true" : absent
+- android:usesCleartextTraffic="true" : absent
 
-android:debuggable="true" : absent
+- android:debuggable="true" : absent
 
 Donc aucune configuration explicite dangereuse de ce type n’est visible dans le manifeste.
 
@@ -89,7 +89,8 @@ Le fichier strings.xml a été exploré afin d’identifier les chaînes de cara
 Le fichier strings.xml a été analysé afin d’identifier les chaînes de caractères utilisées par l’application. Aucune information sensible telle que des mots de passe, clés API ou tokens n’a été trouvée. Toutefois, la présence du message “Enter the Secret String” indique que l’application repose sur un mécanisme de vérification basé sur une valeur secrète, suggérant que cette logique est implémentée dans le code source.
 
 - network_security_config.xml si présent
-Autres fichiers XML de configuration
+- Autres fichiers XML de configuration
+  
 Aucun fichier network_security_config.xml n’a été trouvé dans les ressources de l’APK. Les autres fichiers XML identifiés concernent principalement l’interface graphique (activity_main.xml), le menu (menu_main.xml) et les ressources textuelles ou visuelles (strings.xml, styles.xml, dimens.xml). Aucun fichier de configuration réseau sensible n’a été observé.
 
 
@@ -111,9 +112,13 @@ Recherchez des informations d'authentification :
 <img width="477" height="498" alt="image" src="https://github.com/user-attachments/assets/3e48fcd0-aea8-49e6-acab-9c61dc6090b8" />
 
 Recherchez des indicateurs de mode de développement :
+
 <img width="478" height="470" alt="image" src="https://github.com/user-attachments/assets/0246a0d6-3e53-4da2-9259-17fe13c75177" />
+
 <img width="476" height="449" alt="image" src="https://github.com/user-attachments/assets/b8c1ddc0-415d-497f-9ec2-dab862ff7bfc" />
+
 <img width="691" height="335" alt="image" src="https://github.com/user-attachments/assets/174f6c79-0946-4619-9d91-55a3793f463f" />
+
 <img width="951" height="337" alt="image" src="https://github.com/user-attachments/assets/1287d398-5189-42a5-b9a9-5af2208b8797" />
 
 Task 5 — Convertir DEX → JAR avec dex2jar 
@@ -126,23 +131,18 @@ Task 5 — Convertir DEX → JAR avec dex2jar
 
 <img width="689" height="62" alt="image" src="https://github.com/user-attachments/assets/34c2b8be-fbf4-4412-869d-3623ba15ebc8" />
 
-Vérifiez les fichiers DEX extraits :
+2- Vérifiez les fichiers DEX extraits :
 
 <img width="608" height="122" alt="image" src="https://github.com/user-attachments/assets/54df719b-8e97-430d-82e3-6fb0ee9b67a2" />
 
-Convertissez chaque fichier DEX en JAR :
+3- Convertissez chaque fichier DEX en JAR :
 
 <img width="850" height="40" alt="image" src="https://github.com/user-attachments/assets/7609b253-822e-41c2-8b25-b90a7bba9ff7" />
 
-🎯 Task 6 — Comparaison JADX vs JD-GUI
+Task 6 — Comparaison JADX vs JD-GUI
 
 <img width="437" height="292" alt="image" src="https://github.com/user-attachments/assets/3677d8af-1c7f-43a3-a194-df1a930ed5f3" />
-Comparez la même classe/méthode dans JADX GUI et JD-GUI :
-Navigation et organisation
-Lisibilité du code
-Gestion des constructions spécifiques à Android
-Impact de l'obfuscation
-Affichage des ressources
+
 
 
 
