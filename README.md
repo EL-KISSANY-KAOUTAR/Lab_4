@@ -24,6 +24,8 @@ Task 1 — Préparer le workspace et vérifier l'APK
 6- (Optionnel) Vérifiez la signature de l'APK :
 <img width="947" height="181" alt="image" src="https://github.com/user-attachments/assets/fb92983b-1e51-46b3-9a59-08e48a6ce0ab" />
 
+Task 3 — Analyse avec JADX GUI
+
 <img width="959" height="470" alt="image" src="https://github.com/user-attachments/assets/d7dfcd4d-6e85-42fc-9fff-b5b8fefe0a11" />
 
 <img width="959" height="502" alt="image" src="https://github.com/user-attachments/assets/6bf9b844-28f5-4a53-8077-3c7fb96074a1" />
